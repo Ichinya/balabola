@@ -45,7 +45,6 @@ class Balabola
         ));
 
         $response = curl_exec($curl);
-        print_r($response);
 
         curl_close($curl);
         return json_decode($response, true);
