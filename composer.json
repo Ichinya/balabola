@@ -1,0 +1,24 @@
+{
+  "name": "ichinya/balabola-api",
+  "description": "balabola",
+  "type": "package",
+  "license": "MIT",
+  "version": "0.0.1",
+  "autoload": {
+    "psr-4": {
+      "Ichinya\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Ichi",
+      "email": "info@ichiblog.ru"
+    }
+  ],
+  "require": {
+    "php": ">=7.4.0",
+    "ext-curl": "*",
+    "ext-json": "*"
+  },
+  "minimum-stability": "dev"
+}
