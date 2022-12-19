@@ -8,14 +8,24 @@ class Balabola
 	private string $url;
 	private ?string $api_key = null;
 
-	public function __construct(string $url = 'https://zeapi.yandex.net/lab/api/yalm/text3', ?string $api_key = null)
+	/**
+	 * @param string $url
+	 * @param string|null $api_key
+	 */
+	public function __construct(string $url = 'http://127.0.0.1:5000/b', ?string $api_key = 'dVRWcUpYMjk0NFVvSEp3TjBZS2p2aU0xOUduQmphaGEzUjdoU1daVQ==')
 		{
 		$this->url = $url;
 		$this->api_key = $api_key;
 		}
 
 
-	public function request(string $query, int $intro, int $filter = 1): array
+	/**
+	 * @param string $query запрос
+	 * @param TypeIntro $intro тип запроса
+	 * @param int $filter всегда 1
+	 * @return array параметры ответа, полученный ответ под ключом text
+	 */
+	public function request(string $query, TypeIntro $intro, int $filter = 1): array
 		{
 		return $this->send(compact('query', 'intro', 'filter'));
 		}
@@ -48,7 +58,7 @@ class Balabola
 		$response = curl_exec($curl);
 
 		curl_close($curl);
-		return json_decode($response, true);
+		return @json_decode($response, true) ?? ['error' => 'bad_server'];
 		}
 
 	}

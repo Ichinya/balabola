@@ -3,7 +3,7 @@
   "description": "balabola",
   "type": "package",
   "license": "MIT",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "autoload": {
     "psr-4": {
       "Ichinya\\": "src/"
@@ -16,7 +16,7 @@
     }
   ],
   "require": {
-    "php": ">=7.4.0",
+    "php": ">=8.1",
     "ext-curl": "*",
     "ext-json": "*"
   },
